@@ -1,0 +1,56 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin2",
+  "email": "admin2@yopmail.com",
+  "password": "securepassword",
+  "role": "admin"
+}
+
+###Login to JWT Token66ba28593e9ea8d59910445a
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin2",
+  "password": "securepassword"
+}
+
+###Create Ticket
+POST http://localhost:3000/tickets/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhNWNlZDk4MWEzYWY3YTg5MTlkNzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3MjM0ODk1MjksImV4cCI6MTcyMzQ5MzEyOX0.I0VXhV4C9gNFU4I7NbaW9r0lT-nxCV6JrwL0Ljyd590
+Content-Type: application/json
+
+{
+  "title": "Issue with the Customer Support new"
+}
+
+###Update Ticket
+
+PATCH http://localhost:3000/tickets/update/66ba56e1ed18230b62318dc1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhNTY5YmVkMTgyMzBiNjIzMThkYmIiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3MjM0ODc5MzYsImV4cCI6MTcyMzQ5MTUzNn0.2RdUWJCVcw19lNOT8irV3t2ETpTZqXPTttpZMI4TrHo
+Content-Type: application/json
+
+{
+  "status": "InProgress",
+  "title": "Issue with the product (Updated) by Agent"
+}
+
+###Delete Ticket
+
+DELETE http://localhost:3000/tickets/delete/66ba5607ed18230b62318db3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhNTQwOWIyZTAyNjU2NTczNjZhYTEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjM0ODc3MzUsImV4cCI6MTcyMzQ5MTMzNX0.TAxZHI5VI8C5-YyuwwGERx4mauK36sIqx4HvlwsxmSg
+Content-Type: application/json
+
+
+###Assign Ticket
+
+PATCH http://localhost:3000/tickets/assign/66ba5d0d981a3af7a8919d7c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhNWUyYjk4MWEzYWY3YTg5MTlkODgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjM0ODk4NDIsImV4cCI6MTcyMzQ5MzQ0Mn0.9BP1tWTe97K_HIt2N3t6lf610YEgopCSBqY-ZC5oMzA
+Content-Type: application/json
+
+{
+  "assignedTo": "support1"
+}
