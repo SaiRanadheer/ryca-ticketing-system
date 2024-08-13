@@ -2,10 +2,10 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-  "username": "admin2",
-  "email": "admin2@yopmail.com",
+  "username": "admin",
+  "email": "admin@yopmail.com",
   "password": "securepassword",
-  "role": "admin"
+  "role": "support agent"
 }
 
 ###Login to JWT Token66ba28593e9ea8d59910445a
@@ -14,13 +14,13 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "username": "admin2",
+  "username": "admin",
   "password": "securepassword"
 }
 
 ###Create Ticket
 POST http://localhost:3000/tickets/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhNWNlZDk4MWEzYWY3YTg5MTlkNzkiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3MjM0ODk1MjksImV4cCI6MTcyMzQ5MzEyOX0.I0VXhV4C9gNFU4I7NbaW9r0lT-nxCV6JrwL0Ljyd590
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhNWUyYjk4MWEzYWY3YTg5MTlkODgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjM1MjE0NTgsImV4cCI6MTcyMzUyNTA1OH0.tLB6Id7PeSWU9ZDPN0Tmm8ZRs1fkJNENwj0JLoSZAgE
 Content-Type: application/json
 
 {
@@ -47,10 +47,13 @@ Content-Type: application/json
 
 ###Assign Ticket
 
-PATCH http://localhost:3000/tickets/assign/66ba5d0d981a3af7a8919d7c
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhNWUyYjk4MWEzYWY3YTg5MTlkODgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjM0ODk4NDIsImV4cCI6MTcyMzQ5MzQ0Mn0.9BP1tWTe97K_HIt2N3t6lf610YEgopCSBqY-ZC5oMzA
+PATCH http://localhost:3000/tickets/assign/66bad9d38c1fba260bf8a1c2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJhZGE0NzhjMWZiYTI2MGJmOGExYzgiLCJyb2xlIjoic3VwcG9ydCBhZ2VudCIsImlhdCI6MTcyMzUyMTYyNywiZXhwIjoxNzIzNTI1MjI3fQ.Mji3rp8PCQDr4LwgWPGoM3w14zreu40sghR3rYHKovs
 Content-Type: application/json
 
 {
-  "assignedTo": "support1"
+  "assignedTo": "support"
 }
+
+
+###
