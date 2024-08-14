@@ -10,6 +10,52 @@ const mongoose = require('mongoose'); // To access the MongoDB driver
 const router = express.Router();
 
 // API 1 - Create a Ticket (Allowed for: customers, support agents, admins)
+/**
+ * @swagger
+ * paths:
+ *     /tickets/create:
+ *         post:
+ *             summary: This API creates a new ticket
+ *             description: This API to create new tickets
+ *             parameters:
+ *                  - in: query
+ *                    name: ticket
+ *                    required: true
+ *                    description: Ticket Details
+ *                    schema:
+ *                          type: object
+ *                          properties:
+ *                                     title:
+ *                                           type: string
+ *                                     assignedTo:
+ *                                                type: string
+ *                                     status:
+ *                                            type: string
+ *                                     createdAt:
+ *                                               type: string
+ *                                     updatedAt:
+ *                                               type: string
+ *             responses:
+ *                  200:
+ *                      description: ticket info
+ *                      content: 
+ *                          application/json: 
+ *                              schema: 
+ *                                  type: object
+ *                                  properties:
+ *                                             title:
+ *                                                   type: string
+ *                                             assignedTo:
+ *                                                        type: string
+ *                                             status:
+ *                                                    type: string
+ *                                             _id:
+ *                                                 type: string
+ *                                             createdAt:
+ *                                                       type: string
+ *                                             updatedAt:
+ *                                                       type: string
+ */
 router.post('/create', auth, roleAuth(['customer', 'support agent', 'admin']), async (req, res) => {
   const { title } = req.body;
   try {
